@@ -22,6 +22,7 @@ const MainLayout = () => {
     'regular':require('./../assets/fonts/LTSaeada-Regular.otf'),
     'medium':require('./../assets/fonts/LTSaeada-Medium.otf'),
     'bold':require('./../assets/fonts/LTSaeada-Bold.otf'),
+    'light':require('./../assets/fonts/LTSaeada-Light.otf'),
   })
 
   useEffect(()=>{

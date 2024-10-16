@@ -4,6 +4,7 @@ import { theme } from '../constants/theme';
 import { hp } from '../helpers/common';
 import Avatar from './Avatar';
 import moment from 'moment';
+import Icon from '../assets/icons';
 
 const CommentItem = ({
     item,
@@ -34,7 +35,7 @@ const CommentItem = ({
             {/* Delete button */}
             {canDelete && (
                 <TouchableOpacity onPress={() => onDelete(item)}>
-                    <Text style={styles.deleteText}>Delete</Text>
+                    <Icon name = "delete" size={20} color={theme.colors.rose}></Icon>
                 </TouchableOpacity>
             )}
         </TouchableOpacity>

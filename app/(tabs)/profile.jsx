@@ -2,7 +2,7 @@ import { Alert, FlatList, Pressable, StyleSheet, Text, TouchableOpacity, View } 
 import React, { useState } from 'react'
 import ScreenWrapper from '../../components/ScreenWrapper'
 import { useAuth } from '../../contexts/AuthContext'
-import { useRouter } from 'expo-router'
+import { Link, useRouter } from 'expo-router'
 import Header from '../../components/Header'
 import { wp, hp } from '../../helpers/common'
 import Icon from '../../assets/icons'
@@ -12,11 +12,14 @@ import Avatar from '../../components/Avatar'
 import { fetchPosts } from '../../services/postService'
 import PostCard from '../../components/PostCard'
 import Loading from '../../components/Loading'
+import Button from '../../components/Button'
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Colors from '../../constants/Colors'
 
 var limit = 0;
 const Profile = () => {
     
-    
+    //const [loading, setLoading] = useState(false); 
     const { user, setAuth } = useAuth(); // Get user and setAuth from context
     const router = useRouter(); // Get the router object
     const [posts, setPosts] = useState([]);
@@ -150,6 +153,14 @@ const UserHeader = ({ user, router, handleLogout }) => {
                             <Text style={styles.infoText}>{user.bio}</Text>
                         )}
                     </View>
+                    <Link href ={'/add-new-pet'} style={styles.addNewPetContainer}>
+                        <MaterialIcons name="pets" size={24} color={Colors.PRIMARY} />
+                            <Text style={{
+                                fontFamily: 'medium',
+                                color:Colors.PRIMARY,
+                                fontSize:18
+                            }}>Add new pet</Text>
+                    </Link>
                 </View>
             </View>
         </View>
@@ -159,6 +170,21 @@ const UserHeader = ({ user, router, handleLogout }) => {
 export default Profile;
 
 const styles = StyleSheet.create({
+    addNewPetContainer:{
+        textAlign:'center',
+        display: 'flex',
+        flexDirection:'row',
+        gap: 10,
+        padding: 20,
+        alignItems: 'center',
+        marginTop: 20,
+        backgroundColor: Colors.LIGHT_PRIMARY,
+        borderWidth: 1,
+        borderColor:Colors.PRIMARY,
+        borderRadius:15,
+        borderStyle:'dashed',
+        justifyContent: 'center'
+    },
     container: {
         flex: 1
     },

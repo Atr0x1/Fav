@@ -134,7 +134,7 @@ const handleNewNotification = async (payload)=>{
     <View style={styles.container}>
       {/* header */}
       <View style={styles.header}>
-        <Text style={styles.title}>Anong header?</Text>
+        <Text style={styles.title}>Pawtalk</Text>
         <View style={styles.icons}>
           <Pressable onPress={()=> {
             setNotificationCount(0)
