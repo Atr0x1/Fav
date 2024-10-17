@@ -55,7 +55,7 @@ const MainLayout = () => {
     
 <Stack
   screenOptions={{
-  headerShown: false
+  headerShown: true
 }}
 >
 <Stack.Screen

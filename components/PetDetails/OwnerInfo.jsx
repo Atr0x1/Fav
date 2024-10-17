@@ -5,7 +5,7 @@ import Colors from '../../constants/Colors';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function OwnerInfo({pet}) {
-    const { user, setAuth } = useAuth();
+    
   return (
     <View style={styles.container}>
         <View style={{
@@ -13,17 +13,12 @@ export default function OwnerInfo({pet}) {
             flexDirection:'row',
             gap: 20
         }}>
-      <Image source={{uri: pet?.userImage}}
-      style={{
-        width:50,
-        height:40
-      }}
-      />
+      
       <View>
       <Text style={{
             fontFamily: 'medium',
             fontSize: 17
-        }}>{user && user.name}</Text>
+        }}>{pet?.username}</Text>
         <Text style={{
             fontFamily:'regular',
             color:Colors.GRAY
